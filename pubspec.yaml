@@ -1,12 +1,13 @@
 name: my_muslim
 description: "A new Flutter project."
-publish_to: 'none'
+publish_to: "none"
 version: 0.1.0
 
 environment:
   sdk: ^3.6.0
 
 dependencies:
+  audioplayers: ^6.1.0
   flutter:
     sdk: flutter
   flutter_compass: ^0.8.1
@@ -15,6 +16,8 @@ dependencies:
   geolocator: ^13.0.2
   http: ^1.3.0
   intl: ^0.20.2
+  math_expressions: ^2.6.0
+  permission_handler: ^11.3.1
   sensors_plus: ^6.1.1
   table_calendar: ^3.2.0
 
@@ -26,4 +29,7 @@ dev_dependencies:
 flutter:
   uses-material-design: true
 assets:
-  - assets/
+  - assets/bg.jpg
+  - assets/compass.png
+  - assets/kabah.jpg
+  - assets/mosque.png

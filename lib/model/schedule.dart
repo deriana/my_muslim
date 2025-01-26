@@ -28,6 +28,12 @@ class Schedule {
         colorString: "purple", // Color for the icon
       ),
       Schedule(
+        name: "Terbit",
+        time: "04:00 WIB",
+        icon: Icon(Icons.sunny_snowing),
+        colorString: "orange", // Color for the icon
+      ),
+      Schedule(
         name: "Dzuhur",
         time: "04:00 WIB",
         icon: Icon(Icons.sunny),
@@ -47,12 +53,6 @@ class Schedule {
       ),
       Schedule(
         name: "Isya",
-        time: "04:00 WIB",
-        icon: Icon(Icons.nights_stay_sharp),
-        colorString: "purple", // Color for the icon
-      ),
-      Schedule(
-        name: "Tarawih",
         time: "04:00 WIB",
         icon: Icon(Icons.nights_stay_sharp),
         colorString: "purple", // Color for the icon
