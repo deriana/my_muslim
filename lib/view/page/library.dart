@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:my_muslim/model/doa.dart'; // Ganti Surah dengan Doa
 import 'package:my_muslim/model/surah.dart'; // Pastikan Surah terimport
-import 'package:my_muslim/view/page/surah_list.dart'; // Ganti SurahListWidget menjadi DoaListWidget
-import 'package:my_muslim/view/page/doa_list.dart'; // Import DoaListWidget untuk bagian Doa
+import 'package:my_muslim/view/widget/surah_list.dart'; // Ganti SurahListWidget menjadi DoaListWidget
+import 'package:my_muslim/view/widget/doa_list.dart'; // Import DoaListWidget untuk bagian Doa
 
 class LibraryPage extends StatefulWidget {
   const LibraryPage({super.key});
@@ -19,8 +19,9 @@ class _LibraryPageState extends State<LibraryPage> {
   late List<Surah> filteredSurahList;
   late List<Doa> doaList;
   late List<Doa> filteredDoaList;
-  
-  bool isSurahSelected = true; // Menyimpan state apakah "Surah" atau "Doa" yang dipilih
+
+  bool isSurahSelected =
+      true; // Menyimpan state apakah "Surah" atau "Doa" yang dipilih
 
   @override
   void initState() {
@@ -78,7 +79,7 @@ class _LibraryPageState extends State<LibraryPage> {
                         width: double.infinity,
                         padding: const EdgeInsets.all(10.0),
                         decoration: BoxDecoration(
-                          color: Colors.grey[200],
+                          color: Color.fromARGB(255, 223, 246, 242),
                           borderRadius:
                               const BorderRadius.all(Radius.circular(10.0)),
                         ),
@@ -124,12 +125,14 @@ class _LibraryPageState extends State<LibraryPage> {
                       Gap(20),
                       // Konten yang diganti berdasarkan pilihan tab
                       isSurahSelected
-                          ? SurahListWidget(  // Menampilkan Surah jika Surah dipilih
+                          ? SurahListWidget(
+                              // Menampilkan Surah jika Surah dipilih
                               surahList: filteredSurahList,
                               filterSurahList: filterSurahList,
                               searchController: _searchController,
                             )
-                          : DoaListWidget(  // Menampilkan Doa jika Doa dipilih
+                          : DoaListWidget(
+                              // Menampilkan Doa jika Doa dipilih
                               doaList: filteredDoaList,
                               filterDoaList: filterDoaList,
                               searchController: _searchController,

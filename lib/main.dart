@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_muslim/view/page/doa_detail.dart';
-import 'package:my_muslim/view/page/home.dart';
 import 'package:my_muslim/view/page/library.dart';
+import 'package:my_muslim/view/page/schedule.dart';
 import 'package:my_muslim/view/page/surah_detail.dart';
 
 void main() {
@@ -16,7 +16,8 @@ class MainApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       routes: {
-        '/': (context) => const LibraryPage(),
+        '/': (context) => const SchedulePage(),
+        '/library': (context) => const LibraryPage(),
         '/surah': (context) => const SurahDetailPage(),
         '/doa': (context) => const DoaDetailPage(),
       },
