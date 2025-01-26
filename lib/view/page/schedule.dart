@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:my_muslim/view/widget/calender.dart';
 import 'package:my_muslim/view/widget/fasting_widget.dart';
+import 'package:my_muslim/view/widget/navbar.dart';
 import 'package:my_muslim/view/widget/schedule_item.dart';
 import 'package:my_muslim/model/schedule.dart';
 
@@ -15,6 +16,8 @@ class SchedulePage extends StatefulWidget {
 class _ScheduleState extends State<SchedulePage> {
   late DateTime _selectedDay;
   bool isFastingChecked = false; // To hold the state of the fasting checkbox
+  int _selectedIndex =
+      2; // Variabel untuk menyimpan indeks halaman yang dipilih
 
   // Fetch the schedule directly from the Schedule class
   final List<Schedule> scheduleItems = Schedule.getScheduleItems();
@@ -23,6 +26,28 @@ class _ScheduleState extends State<SchedulePage> {
   void initState() {
     super.initState();
     _selectedDay = DateTime.now();
+  }
+
+  // Fungsi untuk menangani perubahan halaman berdasarkan navbar item yang dipilih
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+
+    // Navigasi ke halaman terkait jika perlu, misalnya:
+    switch (index) {
+      case 0:
+        Navigator.pushNamed(context, '/');
+        break;
+      case 1:
+        Navigator.pushNamed(context, '/library');
+        break;
+      case 2:
+        break;
+      case 3:
+        Navigator.pushNamed(context, '/kiblat');
+        break;
+    }
   }
 
   // Filter function to only show Imsak and Tarawih if fasting is checked
@@ -110,6 +135,10 @@ class _ScheduleState extends State<SchedulePage> {
             ),
           ],
         ),
+      ),
+      bottomNavigationBar: MyBottomNavigationBar(
+        selectedIndex: _selectedIndex,
+        onItemTapped: _onItemTapped,
       ),
     );
   }
